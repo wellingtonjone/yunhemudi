@@ -1,0 +1,52 @@
+<!--pages/home/home.wxml-->
+<text>这是我的幸福小窝...home</text>
+
+<view wx:if="{{!flag}}">
+<text>{{a}}</text>
+</view>
+
+<view hidden="{{!hidden}}"
+      bindtap="viewTap"
+      data-id = "{{id}}"
+      data-text = "{{a}}"
+>{{obj.a}}</view>
+
+<view catchtap="add" >{{count}}</view>
+
+<view wx:for="{{num}}" wx:for-item="i" wx:key="i">
+    <view wx:for="{{num}}" wx:for-item="j"  wx:key="j">
+        <view wx:if="{{i<=j}}">
+            {{i}} * {{j}}  = {{i*j}}
+        </view>
+    </view>
+</view>
+
+<view>bind事件绑定不会阻止冒泡事件向上冒泡，catch事件绑定可以阻止冒泡事件向上冒泡。</view>
+
+
+<template name="hello" >
+    <view>
+        <view> hello:{{name}}</view>
+        <view> salary:{{salary}}</view>
+    </view>
+</template>
+
+<template is="hello"  data="{{...he}}"  ></template>
+
+
+<import src="/tpls/like.wxml" />
+
+<template is="like" data="{{...he}}"   />
+
+
+<import src="/tpls/signin.wxml" />
+
+<template is="signin" data="{{...signinData}}"/>
+
+<import src="/tpls/actionsheet.wxml" />
+
+<template is="actionsheet" data="{{...actionsheetData}}"/>
+
+<button type="primary" bindtap="action">操作</button>
+
+<button type="primary" bindtap="showAction">操作actionsheet</button>

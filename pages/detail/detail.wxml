@@ -1,0 +1,7 @@
+ <!--pages/detail/detail.wxml-->
+<view hidden="{{hidden}}">
+    <image src="{{mv.images.large}}"></image>
+    <view> 年份 ：   《{{mv.year}}》</view>
+    <view> 导演 ：   {{mv.directors[0].name}}</view>
+    
+</view>

@@ -1,0 +1,44 @@
+<view class="box">
+
+  <progress   
+      percent="{{num}}"
+      show-info
+      stroke-width="10"
+      
+  >
+
+  
+  </progress>
+
+  <view hidden="{{hidden}}">
+      <audio  poster="{{poster}}" name="{{name}}" author="{{author}}" src="{{src}}" id="myAudio" controls loop></audio>
+      <view>
+            <button type="primary" bindtap="play" >播放audio</button>
+            <button type="warn" bindtap="pause">暂停audio</button>
+            
+      </view>
+
+
+      <view class="section tc" wx:if="{{flag}}">
+           <video src="{{videoSrc}}"   controls ></video>
+            <view class="btn-area">
+              <button bindtap="bindButtonTap">获取视频</button>
+            </view>
+      </view>
+
+      <view class="section tc">
+        <video id="myVideo" src="{{videoSrc}}"        
+        danmu-list="{{danmuList}}" 
+        enable-danmu 
+        danmu-btn 
+        controls
+        bindplay="videoPlay"
+      ></video>
+        <view class="btn-area">
+           <button bindtap="bindButtonTap">获取视频</button>
+          <input bindblur="bindInputBlur" value="{{inp}}" placeholder='请输入弹幕'/>
+          <button bindtap="bindSendDanmu">发送弹幕</button>
+        </view>
+      </view>
+  </view>
+</view>

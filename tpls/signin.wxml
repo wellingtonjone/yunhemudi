@@ -1,0 +1,34 @@
+<template name="signin">
+    <modal
+      title="登录"
+      confirm-text="确定"
+      cancel-text="取消"
+      bindconfirm="confirm"
+      bindcancel="cancel"
+      hidden="{{modalHidden}}"
+    >
+      <view>
+        
+        <label class="label">
+            <text>用户名</text>
+            <input 
+              type="text"
+              placeholder='请输入用户名'
+              bindinput='getUsername'
+              value="{{username}}"
+              style="border:1px solid blue"
+            ></input>
+        </label>
+          <label class="label">
+            <text>密码</text>
+            <input 
+              type="password"
+              placeholder='请输入密码'
+              bindinput='getPassword'
+              value="{{password}}"
+              style="border:1px solid blue"
+            ></input>
+        </label>
+      </view>
+    </modal>
+</template>  

@@ -1,0 +1,6 @@
+<template name="like">
+    <view>
+       <text >AAAAAAAAAAAAAAAAAAA</text>
+       <view>{{name}}</view>
+    </view>
+</template>

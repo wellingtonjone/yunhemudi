@@ -1,0 +1,29 @@
+<!--pages/find/find.wxml-->
+<view  class="wrapper" hidden="{{hidden}}">
+    <nav>
+        <view wx:for="{{navList}}" wx:key="index" class="{{navIndex==index?'nav-active':''}}"
+              bindtap="changeNavIndex"
+              data-id="{{index}}"
+        >{{item}}</view>
+    </nav>
+
+    <view class="swiper-box">
+        <swiper indicator-dots="{{false}}" current="{{navIndex}}"
+                bindchange = "swiperChange"
+        >
+             <swiper-item>
+                  <scroll-view scroll-y class="scroll">
+                      <view wx:for="{{mv}}" wx:for-item="m" wx:for-index="idx" wx:key="idx">
+                         <navigator url="/pages/detail/detail?id={{m.id}}">
+                                <image src="{{m.images.large}}"></image>
+                                <view>{{m.title}}</view>
+                         </navigator>
+                      </view>
+                  </scroll-view>
+             </swiper-item>
+             <swiper-item>音乐</swiper-item>
+             <swiper-item>书籍</swiper-item>
+        </swiper>
+    </view>
+</view>
+
